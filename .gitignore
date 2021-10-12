@@ -1,0 +1,7 @@
+*
+!/**/
+!*.*
+*.dSYM
+.vscode
+*.plist
+.DS_Store
