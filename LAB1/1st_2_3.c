@@ -26,8 +26,6 @@ int main() {
       printf("September, October, November\n");
       return 0;
    }
-
-   
    
    return 0;
 }

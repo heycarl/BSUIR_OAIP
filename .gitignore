@@ -5,3 +5,4 @@
 .vscode
 *.plist
 .DS_Store
+*.pages
