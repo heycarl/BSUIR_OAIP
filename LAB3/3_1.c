@@ -52,12 +52,10 @@ int main() {
    printf("Max: %.2lf\n", max);
    printf("Min: %.2lf\n", min);
 
-   printf("Max_i: %d\n", max_i);
-   printf("Min_i: %d\n", min_i);
-
    for (int i = 0; i < p; i++)
    {
        printf("%.2lf ", A[i]);
    }
+   printf("\n");
    return 0;
 }

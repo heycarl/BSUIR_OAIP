@@ -14,9 +14,7 @@ int main() {
    scanf("%f%f", &a, &b);
    s = a * b;
    g = sqrt(pow(a, 2) + pow(b, 2));
-   printf("Sum: %.2f\nG %.2f\n", s, g);
-
-   printf("LAB 1.2 by Efimchik Alexandr from GROUP 150702 \n");
+   printf("Sum: %.2f\nHypotenuse %.2f\n", s, g);
 
    return 0;
 }
