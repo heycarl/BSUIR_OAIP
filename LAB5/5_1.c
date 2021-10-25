@@ -8,21 +8,21 @@ int main()
 {
     printf("LAB 5.2 by Efimchik Alexandr from GROUP 150702 \n");
 
-    // printf("Enter matrix size: ");
-    // int m, n;
-    // scanf("%d%d", &m, &n);
-    // int A[m][n];
-    // for (int i = 0; i < m; i++)
-    // {
-    //     for (int j = 0; j < n; j++)
-    //     {
-    //         scanf("%d", &A[i][j]);
-    //     }
-    // }
-    int m = 5;
-    int n = 5;
+    printf("Enter matrix size: ");
+    int m, n;
+    scanf("%d%d", &m, &n);
+    int A[m][n];
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            scanf("%d", &A[i][j]);
+        }
+    }
+    // int m = 5;
+    // int n = 5;
 
-    int A[5][5] = {{5, 12, 3, -2, 32}, {6, -23, 0, 22, 323}, {15, 16, -3, -2, 232}, {99, -99, 52, 76, 2}, {0, 1, 3, -2, -667}};
+    // int A[5][5] = {{5, 12, 3, -2, 32}, {6, -23, 0, 22, 323}, {15, 16, -3, -2, 232}, {99, -99, 52, 76, 2}, {0, 1, 3, -2, -667}};
 
     for (int i = 0; i < m; i++)
     {
