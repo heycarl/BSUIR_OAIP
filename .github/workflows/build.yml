@@ -18,5 +18,5 @@ jobs:
     - name: build
       run: for file in $C_FILES ;
             do
-              gcc -o $(echo $file | sed 's/..$//') "$file" 
+              gcc -o $(echo $file | sed 's/..$//') "$file";
             done
