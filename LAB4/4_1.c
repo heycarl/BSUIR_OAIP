@@ -25,7 +25,7 @@ int main()
     scanf("%d", &n);
     int A[n];
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) 
         scanf("%d", &A[i]);
     }
 

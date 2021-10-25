@@ -16,7 +16,7 @@ int main() {
    source = 3 * n;
    while (source >= n)
    {
-       n += 1 / n;
+       n += 1 / n
        i++;
    }
    
