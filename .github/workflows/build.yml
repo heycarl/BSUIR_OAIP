@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  push:
+    branches: [ '*' ]
+  pull_request:
+    branches: [ '*' ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: list files
+      run: export C_FILES=`find . -type f -name '*.c'`
+    - name: build
+      run: for file in $C_FILES ;
+            do
+              gcc -o $(echo $file | sed 's/..$//') "$file" 
+            done
