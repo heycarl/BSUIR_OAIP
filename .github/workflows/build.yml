@@ -16,5 +16,5 @@ jobs:
     - name: Build
       run: for file in $(find . -type f -name '*.c') ;
             do
-              gcc -lm -o $(echo $file | sed 's/..$//') "$file";
+              gcc -o $(echo $file | sed 's/..$//') "$file" -lm ;
             done
