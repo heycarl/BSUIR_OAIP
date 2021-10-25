@@ -14,9 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: list files
-      run: export C_FILES=`find . -type f -name '*.c'` && echo $C_FILES && pwd && ls
+      run: export C_FILES=`find . -type f -name '*.c'`
     - name: build
       run: for file in $C_FILES ;
             do
-              gcc -o $(echo $file | sed 's/..$//') "$file";
+              gcc -v -o $(echo $file | sed 's/..$//') "$file";
             done
