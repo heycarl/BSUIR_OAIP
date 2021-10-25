@@ -13,8 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: list files
-      run: export C_FILES=`find . -type f -name '*.c'`
     - name: Build
       run: for file in $(find . -type f -name '*.c') ;
             do
