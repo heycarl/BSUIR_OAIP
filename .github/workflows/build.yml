@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: list files
-      run: export C_FILES=`find . -type f -name '*.c'`
+      run: export C_FILES=`find . -type f -name '*.c'` && echo $C_FILES && pwd && ls
     - name: build
       run: for file in $C_FILES ;
             do
