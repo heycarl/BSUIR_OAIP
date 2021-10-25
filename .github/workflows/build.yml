@@ -13,10 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: list files
-      run: export C_FILES=`find . -type f -name '*.c'`
-    - name: build
-      run: for file in $C_FILES ;
+    - name: Build
+      run: for file in $(find . -type f -name '*.c') ;
             do
-              gcc -o $(echo $file | sed 's/..$//') "$file";
+              gcc -o $(echo $file | sed 's/..$//') "$file" -lm ;
             done
