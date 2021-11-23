@@ -30,7 +30,7 @@ int main()
     {
         for (int j = 0; j < m; j++)
         {
-            printf("%.2lf ", *(*(ptr + i) + j));
+            printf("%.2lf ", ptr[i][j]);
         }
         printf("\n");
     }
@@ -53,11 +53,10 @@ int main()
     {
         for (int j = 0; j < m; j++)
         {
-            printf("%.2lf ", *(*(ptr + i) + j));
+            printf("%.2lf ", ptr[i][j]);
         }
         printf("\n");
     }
     printf("\n");
-
     return 0;
 }
