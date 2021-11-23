@@ -13,13 +13,13 @@ int main()
     int m = 0; // column
     scanf("%d %d", &n, &m);
 
-    int **ptr = (int **)calloc((n + 1), sizeof(int *));
+    float **ptr = (float**)calloc((n + 1), sizeof(float*));
     for (int i = 0; i < n + 1; i++)
     {
-        *(ptr + i) = (int *)calloc(m, sizeof(int));
+        *(ptr + i) = (float*)calloc(m, sizeof(float));
         for (int j = 0; j < m; j++)
         {
-            scanf("%d", &ptr[i][j]);
+            scanf("%f", &ptr[i][j]);
         }
     }
 
@@ -30,7 +30,7 @@ int main()
     {
         for (int j = 0; j < m; j++)
         {
-            printf("%d ", *(*(ptr + i) + j));
+            printf("%.2lf ", *(*(ptr + i) + j));
         }
         printf("\n");
     }
@@ -53,7 +53,7 @@ int main()
     {
         for (int j = 0; j < m; j++)
         {
-            printf("%d ", *(*(ptr + i) + j));
+            printf("%.2lf ", *(*(ptr + i) + j));
         }
         printf("\n");
     }
