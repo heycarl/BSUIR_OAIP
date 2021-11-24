@@ -26,15 +26,6 @@ int main()
     if (!ptr)
         return 0;
 
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            printf("%.2lf ", ptr[i][j]);
-        }
-        printf("\n");
-    }
-    printf("\n");
     for (int i = 0; i < m; i++)
     {
         int max = 0;
