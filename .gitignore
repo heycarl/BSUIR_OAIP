@@ -6,3 +6,4 @@
 *.plist
 .DS_Store
 *.pages
+*.exe
