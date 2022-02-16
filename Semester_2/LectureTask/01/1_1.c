@@ -1,3 +1,6 @@
+// Copyright (c) Alexandr Efimchik 2022
+// Group 150702
+
 // Создать текстовый файл F1 не менее, чем из 10 строк и записать в него информацию.
 // Скопировать в файл F2 только четные строки из F1.
 
@@ -9,6 +12,7 @@ char ** splitLines(FILE *file, int *return_num_words);
 
 int main()
 {
+    printf("Lecture task 1 by Efimchik Alexandr from GROUP 150702 \n");
     FILE *f1;
     if ((f1 = fopen("F1.txt", "w")) == NULL)
         printf("File could not be opened\n");
@@ -47,13 +51,13 @@ int main()
     return 0;
 }
 
-char ** splitLines(FILE *file, int *return_num_words)
+char ** splitLines(FILE *file, int *return_num_lines)
 {
     char **lines;
     lines = (char **)calloc(sizeof(char *), 1);
 
     char t = getc(file);
-    int num_words = 0;
+    int num_lines = 0;
     lines[0] = calloc(sizeof(char), 1);
     int len;
 
@@ -63,19 +67,19 @@ char ** splitLines(FILE *file, int *return_num_words)
         do
         {
             len++;
-            lines[num_words] = realloc(lines[num_words], sizeof(char) * (len + 1));
-            lines[num_words][len] = t;
+            lines[num_lines] = realloc(lines[num_lines], sizeof(char) * (len + 1));
+            lines[num_lines][len] = t;
             t = getc(file);
         } while (t != '\n' && t != '\0');
 
-        lines[num_words] = realloc(lines[num_words], sizeof(char) * (len + 2));
-        lines[num_words][len + 1] = '\0';
+        lines[num_lines] = realloc(lines[num_lines], sizeof(char) * (len + 2));
+        lines[num_lines][len + 1] = '\0';
 
-        num_words++;
-        lines = (char **)realloc(lines, sizeof(char *) * (num_words + 1));
-        lines[num_words] = calloc(sizeof(char), 1);
+        num_lines++;
+        lines = (char **)realloc(lines, sizeof(char *) * (num_lines + 1));
+        lines[num_lines] = calloc(sizeof(char), 1);
         t = getc(file);
     } while (!feof(file));
-    *return_num_words = num_words;
+    *return_num_lines = num_lines;
     return lines;
 }
