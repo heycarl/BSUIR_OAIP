@@ -29,7 +29,7 @@ int main()
 
     while (1)
     {
-        scanf("%s", &filename);
+        scanf("%s", filename);
         if (!validateFilename(filename))
         {
             printf("Invalid file name\n");
@@ -49,8 +49,10 @@ int main()
     do
     {
         scanf("%d", &entered_num);
+        if (entered_num == 15070014)
+            break;
         fwrite(&entered_num, sizeof(int), 1, f1);
-    } while (entered_num != 15070014);
+    } while (1);
 
     fclose(f1);
 
@@ -58,8 +60,8 @@ int main()
     f2 = fopen(filename, "rb");
     int num;
     int sum = 0;
-    fpos_t start_address;
-    fgetpos(f2, &start_address);
+    long start_address;
+    start_address = ftell(f2);
     fread(&num, sizeof(int), 1, f2);
     do
     {
@@ -94,4 +96,3 @@ int validateFilename(char *name)
         return 0;
     return 1;
 }
-
