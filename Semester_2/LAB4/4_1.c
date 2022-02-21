@@ -116,7 +116,7 @@ void writeReversedWord(FILE *writeFile, char *word, int word_len)
 {
     printf("Reversing %s word\n", word);
     fseek(writeFile, 0, SEEK_SET);
-    for (int i = word_len-1; i > -1; i--)
+    for (int i = word_len - 1; i > -1; i--)
     {
         fprintf(writeFile, "%c", word[i]);
     }
@@ -137,7 +137,6 @@ int checkIfLetter(char sym)
 
 FILE *generateFile(char *mode)
 {
-    // while (getchar() != '\n');
     printf("Enter filename: ");
 
     char filename[20];
