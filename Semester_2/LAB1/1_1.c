@@ -7,14 +7,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+union number
+{
+    int dword;
+    struct
+    {
+        unsigned mod : 1;
+    }
+    digits;
+};
+
 int main()
 {
     printf("LAB 1.1 by Efimchik Alexandr from GROUP 150702 \n");
     printf("Enter num: ");
-    int num;
-    scanf("%d", &num);
+    union number n;
+    scanf("%d", &n.dword);
 
-    printf("Remainer afer division: %d\n", (num & 3));
+    printf("Remainer afer division: %d\n", (n.digits.mod));
     
     return 0;
 }
