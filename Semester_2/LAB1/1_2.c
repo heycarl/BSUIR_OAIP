@@ -10,8 +10,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *inputString();
-
 struct figure
 {
     int Square;
@@ -23,6 +21,9 @@ struct figure
         char Color[6];
     } params;
 };
+
+char *inputString();
+void viewData(struct figure * f, int num);
 
 int main()
 {
@@ -46,7 +47,7 @@ int main()
     int menu;
     while (1)
     {
-        
+
         printf("\nSuperStructSoftware\n");
         printf("1) Filter figures by square\n");
         printf("2) Delete figures by name\n");
@@ -63,7 +64,6 @@ int main()
             printf(" ==============================\n");
             for (int i = 0; i < num; i++)
             {
-
                 if (figures[i].Square < filter_square)
                 {
                     printf("| Name: %6s | Square: %5d |\n", figures[i].Name, figures[i].Square);
@@ -75,31 +75,22 @@ int main()
             printf("Specify delete filter: ");
             char *filter_name = inputString();
             printf("FIltered structs by name(%s): \n", filter_name);
-            printf(" ==============================\n");
             for (int i = 0; i < num; i++)
             {
-
                 if (!strcmp(filter_name, figures[i].Name))
                 {
-                    for (int j = i; j < num; j++)
+                    for (int j = i + 1; j < num; j++)
                     {
-                        figures[j] = figures[j+1];
+                        figures[j - 1] = figures[j];
                     }
                     num--;
                     figures = realloc(figures, sizeof(struct figure) * num);
-                } else {
-                    printf("| Name: %6s | Square: %5d |\n", figures[i].Name, figures[i].Square);
                 }
             }
-            printf(" ==============================\n");
+            viewData(figures, num);
             break;
         case 3:
-            printf(" ==============================\n");
-            for (int i = 0; i < num; i++)
-            {
-                printf("| Name: %6s | Square: %5d |\n", figures[i].Name, figures[i].Square);
-            }
-            printf(" ==============================\n");
+            viewData(figures, num);
             break;
         case 4:
             return 0;
@@ -109,6 +100,16 @@ int main()
         }
     }
     return 0;
+}
+
+void viewData(struct figure * f, int num)
+{
+    printf(" ==============================\n");
+    for (int i = 0; i < num; i++)
+    {
+        printf("| Name: %6s | Square: %5d |\n", f[i].Name, f[i].Square);
+    }
+    printf(" ==============================\n");
 }
 
 char *inputString()
