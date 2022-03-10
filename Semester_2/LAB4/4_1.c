@@ -44,7 +44,7 @@ int main()
         current_word = realloc(current_word, sizeof(char) * (word_size + 1));
         current_word[word_size] = '\0';
 
-        printf("Entered word: %s, len: %d\n", current_word, strlen(current_word));
+        printf("Entered word: %s, len: %lu\n", current_word, strlen(current_word));
 
         if (strcmp(current_word, "15070014") == 0)
         {

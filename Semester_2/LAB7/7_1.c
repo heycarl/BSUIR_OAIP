@@ -46,8 +46,8 @@ int main()
             printList(root);
             break;
         case 2:
-            int filter_num;
             printf("Enter filter element: ");
+            int filter_num;
             scanf("%d", &filter_num);
 
             int element;
