@@ -43,7 +43,7 @@ int main()
     int n;
     for (int i = 0; i < items_num; i++)
     {
-        printf("\nEnter %d char and num: ");
+        printf("\nEnter %d char and num: ", i);
         getchar();
         scanf("%c %d", &b, &n);
         fprintf(f1, "%c", b);        
