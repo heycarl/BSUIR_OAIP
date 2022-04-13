@@ -9,12 +9,6 @@ struct figure
         char Color[7];
         // #pragma pack(push, 1)
         struct {
-            // unsigned : 8;
-            // unsigned : 8;
-            // unsigned : 8;
-            // unsigned : 8;
-            // unsigned : 8;
-
             // unsigned : 10;
             // unsigned : 10;
             // unsigned : 10;

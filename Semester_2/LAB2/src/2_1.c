@@ -77,18 +77,18 @@ int main()
             printf("Enter filter perimeter: ");
             float filter_perimeter;
             scanf("%f", &filter_perimeter);
-            printf("Figures, with perimeter smaller than %f: \n", filter_perimeter);
-            printf(" ==============================\n");
+            printf("Figures, with perimeter higher than %f: \n", filter_perimeter);
+            printf(" ==================================== \n");
             for (int i = 0; i < num; i++)
             {
                 if (figures[i].params.flag)
                     continue; 
-                if (figures[i].params.Perimeter < filter_perimeter)
+                if (figures[i].params.Perimeter > filter_perimeter)
                 {
                     printf("| Name: %6s | Perimeter: %5.5f |\n", figures[i].Name, figures[i].params.Perimeter);
                 }
             }
-            printf(" ==============================\n");
+            printf(" ==================================== \n");
             break;
         case 2:
             printf("Specify delete filter: ");
